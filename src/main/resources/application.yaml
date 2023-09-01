@@ -1,0 +1,18 @@
+server:
+  port: 8087
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/db_advance_payment
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: PAYMENT-SERVICE
+  config:
+    import: configserver:http://localhost:9296
